@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package tp3ejer2;
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,9 +16,18 @@ public class frmConversor extends javax.swing.JFrame {
     /**
      * Creates new form frmConversor
      */
-    public frmConversor() {
+    ButtonGroup grupoBotones;
+    
+   public frmConversor() {
         initComponents();
+        // Agrupamos los radio buttons
+        grupoBotones = new ButtonGroup();
+        grupoBotones.add(btnFah);
+        grupoBotones.add(btnKel);
+        grupoBotones.add(btnCel);
+        grupoBotones.add(btnRaf);
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,17 +38,19 @@ public class frmConversor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bgrMedida = new javax.swing.ButtonGroup();
         btnFah = new javax.swing.JRadioButton();
         btnKel = new javax.swing.JRadioButton();
         btnCel = new javax.swing.JRadioButton();
         btnRaf = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        btnConvertir = new javax.swing.JButton();
+        txtBox = new javax.swing.JTextField();
+        btnConvert = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        bgrMedida.add(btnFah);
         btnFah.setText("a Fahrenheit");
         btnFah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +58,7 @@ public class frmConversor extends javax.swing.JFrame {
             }
         });
 
+        bgrMedida.add(btnKel);
         btnKel.setText("a Kelvin");
         btnKel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +66,7 @@ public class frmConversor extends javax.swing.JFrame {
             }
         });
 
+        bgrMedida.add(btnCel);
         btnCel.setText("a  Celsius");
         btnCel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +74,7 @@ public class frmConversor extends javax.swing.JFrame {
             }
         });
 
+        bgrMedida.add(btnRaf);
         btnRaf.setText("a Radianes");
         btnRaf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,16 +85,16 @@ public class frmConversor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("INGRESE TEMPERATURA EN GRADOS");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtBoxActionPerformed(evt);
             }
         });
 
-        btnConvertir.setText("CONVERTIR");
-        btnConvertir.addActionListener(new java.awt.event.ActionListener() {
+        btnConvert.setText("CONVERTIR");
+        btnConvert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConvertirActionPerformed(evt);
+                btnConvertActionPerformed(evt);
             }
         });
 
@@ -106,10 +122,10 @@ public class frmConversor extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(274, 274, 274)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtBox, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(239, 239, 239)
-                        .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnConvert, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -123,7 +139,7 @@ public class frmConversor extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addComponent(jLabel1)
                 .addGap(39, 39, 39)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFah)
@@ -133,7 +149,7 @@ public class frmConversor extends javax.swing.JFrame {
                     .addComponent(btnRaf)
                     .addComponent(btnKel))
                 .addGap(34, 34, 34)
-                .addComponent(btnConvertir)
+                .addComponent(btnConvert)
                 .addContainerGap(119, Short.MAX_VALUE))
         );
 
@@ -144,9 +160,9 @@ public class frmConversor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFahActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtBoxActionPerformed
 
     private void btnKelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKelActionPerformed
         // TODO add your handling code here:
@@ -160,9 +176,35 @@ public class frmConversor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRafActionPerformed
 
-    private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
+    private void btnConvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnConvertirActionPerformed
+         try {
+        double valor = Double.parseDouble(txtBox.getText());
+        double resultado = 0.0;
+        String mensaje = "";
+
+        
+        if (btnFah.isSelected()) {
+            resultado = valor * 9/5 + 32; // Celsius a Fahrenheit
+            mensaje = valor + " °C son " + resultado + " °F";
+        } else if (btnKel.isSelected()) {
+            resultado = valor + 273.15; // Celsius a Kelvin
+            mensaje = valor + " °C son " + resultado + " K";
+        } else if (btnCel.isSelected()) {
+            mensaje = "Ya estás en Celsius: " + valor + " °C";
+        } else if (btnRaf.isSelected()) {
+            mensaje = "Conversión no válida (Radianes no aplica a temperatura)";
+        } else {
+            mensaje = "Selecciona una opción de conversión.";
+        }
+
+        // Mostrar el resultad
+        JOptionPane.showMessageDialog(this, mensaje);
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, ingrese un número válido.");
+    }
+    }//GEN-LAST:event_btnConvertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,13 +242,14 @@ public class frmConversor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bgrMedida;
     private javax.swing.JRadioButton btnCel;
-    private javax.swing.JButton btnConvertir;
+    private javax.swing.JButton btnConvert;
     private javax.swing.JRadioButton btnFah;
     private javax.swing.JRadioButton btnKel;
     private javax.swing.JRadioButton btnRaf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtBox;
     // End of variables declaration//GEN-END:variables
 }
